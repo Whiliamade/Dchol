@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔒 Secure Access</title>
+  <style>
+    :root {
+      --bg-dark: #121212;
+      --text-light: #f1f1f1;
+      --highlight: #ffaa00;
+      --accent: #00aaff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 170, 255, 0.3);
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      color: var(--highlight);
+      animation: popIn 1s ease;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      width: 100%;
+      max-width: 250px;
+      margin: 10px 0;
+      border-radius: 6px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: var(--highlight);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff8800;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    @keyframes popIn {
+      from {opacity: 0; transform: scale(0.8);}
+      to {opacity: 1; transform: scale(1);}
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Enter Password</h1>
+    <input type="password" id="passInput" placeholder="Enter access key" />
+    <br />
+    <button onclick="checkPass()">ACCESS</button>
+    <p class="error" id="errorText">Incorrect password. Try again.</p>
+  </div>
+
+  <script>
+    const correctPass = "276212"; // Ubah password di sini
+
+    function checkPass() {
+      const input = document.getElementById("passInput").value;
+      if (input === correctPass) {
+        window.location.href = "https://vhack.cc/?userId=1164992";
+      } else {
+        document.getElementById("errorText").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
